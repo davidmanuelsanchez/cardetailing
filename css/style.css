@@ -5,11 +5,13 @@
     box-sizing: border-box;
 }
 /* barra de navegacion */
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: blueviolet;
+body{
+    
+    background-color:blueviolet;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+   
+
 .navbar {
     background-color: #333;
     color: #fff;
@@ -88,7 +90,6 @@ body {
     font-weight: bold;
 }
 
-
 /* hasta aqui se dio estilo y responsive a la barra de navegacion y al menu inicio  */
 header{
     background-color: black;
@@ -149,7 +150,6 @@ li {
     margin: 5px 0;
 
 }
-
 
 .navbar {
     background-color: black;
@@ -259,34 +259,165 @@ li{
     display: flex;
     justify-content: space-between;
 }
-.seccion {
-    text-align: center;
-    background-color: blue;
+.servicios {
+    display: inline-block;
+    width: 30%;
+    margin: 0 2;
+    vertical-align: top;
+    box-sizing: border-box;
+} 
+.servicios article {
+    background-color: #6b0f0f;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.titulo {
-    margin-bottom: 20px;
-    background-color: coral;
+.servicios article h3{
+    text-align: center;
+    color: aqua;
+    background-color:black;
+}
+.servicios article h4{
+    text-align: center;
+    color: aqua;
+    background-color: black;
+}
+.servicios article img{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
- 
-article h3 {
-    margin-top: 0;
+.servicios article video{
+    display: block;
+    width: 100%;
 }
 
-article img {
+.cuadro{
+    border: 2px black ;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+
+}
+.contenedor img{
     max-width: 100%;
     height: auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    
+    
+}
+.parrafo{
+    font-size: 16px;
+    color: red;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+.container{
+    text-align: center;
+}
+.titulo:hover{
+    color: chartreuse;
+    font-size: 30px;
+    transform: translateY(20px)
+
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.imagen{
+    border: 2px solid red;
+    transition: transform 0.3s ease;
 }
 
+/* Testimonios, Estilos comunes para todos los testimonios*/
+.testimonio1,
+.testimonio2,
+.testimonio3,
+.testimonio4 {
+    transition: transform 0.3s ease; /* Transición suave */
+    padding: 10px; /* Espaciado alrededor del texto */
+    display: inline-block; /* Para que la transformación se aplique correctamente */
+}
+
+/* Estilos para cuando se hace hover en cualquier testimonio */
+.testimonio1:hover,
+.testimonio2:hover,
+.testimonio3:hover,
+.testimonio4:hover {
+    transform: translateY(-20px);
+    text-align: center;
+    font-size: 20px;
+    color: rgb(15, 9, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor del texto */
+}
+
+/* Fin Testimonios*/
+
+
+
+.imagen:hover{
+    transform: translateY(-3px);
+}
+.imagen img{
+    max-width: 90%;
+    height: auto;
+}
 /* seccion 5 presupuesto */
 
+.titulo1{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    background-color: yellow;
+    color: dodgerblue;
+    text-align: center;
+}
+.titulo2{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    background-color: yellow;
+    color: dodgerblue;
+    text-align: center ;
+}
+.container1{
+    width: 80%;
+    max-width: 800px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5,1fr);
+    gap: 210px;
+}
+.antes, .despues{
+    display: flex;
+    flex-direction: column;
+    border-color: #6b0f0f;
+}
+img{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50px;
+    
+    
+}
+/* responsive para pantalla movil cambiando a una sola columna cuando
+el ancho de la pantalla es menor o igual a 600px */
+@media screen and(max-width: 600px) {
+    .grid{
+        grid-template-columns: 1fr;
+    }
+}
+    
+
+/* footer */
 .container {
     width: 50%;
     margin: 0 auto;
@@ -319,56 +450,329 @@ textarea{
 button[type="submit"]:hover{
     background-color: rgb(0, 255, 221);
 }
-/* seccion 5 */
-.container{
+/* Seccion Presupuesto*/
+.container {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
-footer{
+
+footer {
     flex-shrink: 0;
-    background-color:burlywood;
-    color:black
-    text-aling: center;
-    padding: 20px
-    width: 100%
+    background-color: burlywood;
+    color: black;
+    text-align: center; /* "text-align" estaba mal escrito */
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Agregado para asegurar que el pie de página ocupe todo el ancho */
+}
+
+footer p {
+    margin: 0;
+    font-size: 18px; /* Tamaño de fuente aumentado para una mejor legibilidad */
+}
+
+/* seccion 4 productos*/
+.ul menu-nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.titulo{
+    font-size: 25px;
+    border-radius: 20px;
+    border:4px solid orange;
+    text-align: center;
+    padding: 10px;
+}
+.titulo h1{
+    color:black;
+    font-size: 50px;
+
+}
+
+.parrafo{
+    font-size: 30px;
+    color: #6b0f0f;
+    background-color: greenyellow;
+    text-shadow: #555;
+    text-align: center;
+    border-radius: 40px;
+}
+.parrafo2{
+    font-size: 30px;
+    color: #6b0f0f;
+    background-color: greenyellow;
+    text-shadow: #555;
+    text-align: center;
+    border-radius: 40px;
+}
+.parrafo3{
+    font-size: 30px;
+    color: #6b0f0f;
+    background-color: greenyellow;
+    text-shadow: #555;
+    text-align: center;
+    border-radius: 40px;
+    
+}
+
+.article{
+    width: 780px;
+    border-radius: 40px;
+    border: 4px solid black;
+    margin: 20px;
+    padding: 20px;
+    transitions: transform 0.5 ease-in-out;
+    font-size: 20px;
+    
+}
+.article:hover{
+    transform: translate(10px,-10px);
+    transform: scale(1, 0,9);
+    font-size: 30px;
+}
+/* seccion 3 promos */
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    /* utilizo posicion absoluta en el gradient */
+    position: relative; 
+    /* corto el gradient que sobresale */
+    overflow: hidden;
+        
+}
+.car h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.card img{
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.card p{
+    font-size: 30px;
+    line-height: 1.5;
+    color: yellow;
+}
+.medios-pagos{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #6b0f0f;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 20px;
+    font-size: 30px;
+}
+.forma-pago{
+    text-align: center;
+    font-size: 20px;
+    
+    
+}
+.card::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* gradiente transparente a negro */
+    background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+    opacity: 0;
+    /* transicion suave para la animacion de opacidad */
+    transition: opacity 0.3s ease;
+}
+.card:hover img {
+    /* escala hacia adelante al pasar el cursor */
+    transform: scale(1.1);
+}
+.card:hover::after{
+    /* mostrar gradiente al pasar el cursor */
+    opacity: 1;
+}
+
+/* estilo para pantalla responsive de movil menor a 768px */
+
+@media(max-width:767px){
+    .container{
+        flex-direction: column;
+    }
+}
+.card{
+    width: 100%;
+}
+/* Responsive*/
+/* Reseteo de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Barra de navegación */
+body {
+    background-color: blueviolet;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 130px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos comunes para todos los testimonios */
+.testimonio1,
+.testimonio2,
+.testimonio3,
+.testimonio4 {
+    transition: transform 0.3s ease; /* Transición suave */
+    padding: 10px; /* Espaciado alrededor del texto */
+    display: inline-block; /* Para que la transformación se aplique correctamente */
+    text-align: center;
+    font-size: 16px; /* Tamaño de fuente inicial */
+    color: #000; /* Color de texto inicial */
+    margin-bottom: 20px; /* Espacio entre testimonios */
+}
+
+/* Estilos para cuando se hace hover en cualquier testimonio */
+.testimonio1:hover,
+.testimonio2:hover,
+.testimonio3:hover,
+.testimonio4:hover {
+    transform: translateY(-20px);
+    font-size: 20px; /* Tamaño de fuente aumentado */
+    color: rgb(15, 9, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor del texto */
+}
+
+/* Footer */
+footer {
+    background-color: burlywood;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
     position: fixed;
     bottom: 0;
 }
 
-footer p{
+footer p {
     margin: 0;
 }
 
-/* seccion 4 productos*/
-.container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 20px;
+/* Media queries para dispositivos de diferentes tamaños de pantalla */
+
+/* Para tabletas y dispositivos con pantalla más pequeña */
+@media screen and (max-width: 1024px) {
+    .logo img {
+        height: 100px; /* Reducir tamaño del logo */
+    }
+
+    .nav-links li {
+        margin-right: 15px; /* Reducir margen entre elementos del menú */
+    }
 }
 
-.box{
-    width: 300px;
-    padding: 20px;
-    border: 1px;
-    text-align: center;
+/* Para teléfonos móviles y dispositivos con pantalla muy pequeña */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px; /* Reducir el espacio entre elementos de la barra de navegación */
+    }
+
+    .logo img {
+        height: 80px; /* Reducir aún más el tamaño del logo */
+    }
+
+    .nav-links {
+        display: none; /* Ocultar los enlaces del menú */
+    }
+
+    /* Estilos para mostrar el menú en dispositivos móviles */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Colocar el menú debajo de la barra de navegación */
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active li {
+        margin: 10px 0;
+    }
+
+    .nav-links.active li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
 }
 
-h1{
-    margin-bottom: 10px;
-}
 
-h2{
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
 
-p{
-    margin-bottom: 20px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
